@@ -8,6 +8,9 @@
     <%= f.input :score_away %>
     <%= f.input :description %>
     <%= f.input :date %>
+    %= f.association :teams,
+                     label: 'equipe',
+                     as: :check_boxes %>
   </div>
 
   <div class="form-actions">
