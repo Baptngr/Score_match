@@ -18,6 +18,12 @@
     <strong>Date:</strong>
     <%= match.date %>
   </p>
+
+  <p>
+    <strong>journée</strong>
+    <%= link_to match.days %>
+  </p>
+  
 <ul>
     <% matches.teams.each do |team| %>
       <li><%= link_to team %></li>
