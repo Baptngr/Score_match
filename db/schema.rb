@@ -24,7 +24,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_20_144703) do
   end
  
  
-  create_table "mathes", force: :cascade do |t|
+  create_table "matches", force: :cascade do |t|
     t.integer "score_home"
     t.integer "score_away"
     t.text "description"
