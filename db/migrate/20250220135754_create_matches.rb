@@ -1,4 +1,4 @@
-class CreateMatches < ActiveRecord::Migration[8.0]
+class CreateJoinTableMatchesDaysTeams < ActiveRecord::Migration[8.0]
   def change
     create_table :matches_days_teams do |t|
       t.integer :score_home
