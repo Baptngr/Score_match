@@ -6,6 +6,9 @@ class CreateMatches < ActiveRecord::Migration[8.0]
       t.text :description
       t.date :date
 
+      t.references :team_home, null: false, foreign_key: { to_table: :teams }
+      t.references :team_away, null: false, foreign_key: { to_table: :teams }
+      t.references :day, null: false, foreign_key: true
 
 
       t.timestamps
