@@ -8,13 +8,13 @@
     <%= f.input :score_away %>
     <%= f.input :description %>
     <%= f.input :date %>
+    belongs_to:team
     %= f.association :teams,
                      label: 'equipe',
                      as: :check_boxes %>
-
-    <%= f.association :teams, 
-                      label: 'equipe',
-                      as: :check_boxes %>
+      
+                     
+                      
   </div>
 
   <div class="form-actions">
