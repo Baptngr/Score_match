@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-
-ActiveRecord::Schema[8.0].define(version: 2025_02_20_144703) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_20_135754) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -29,14 +26,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_20_144703) do
     t.integer "score_away"
     t.text "description"
     t.date "date"
-    t.bigint "team_home_id", null: false
-    t.bigint "team_away_id", null: false
-    t.bigint "day_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["day_id"], name: "index_matches_on_day_id"
-    t.index ["team_away_id"], name: "index_matches_on_team_away_id"
-    t.index ["team_home_id"], name: "index_matches_on_team_home_id"
   end
 
   create_table "teams", force: :cascade do |t|
