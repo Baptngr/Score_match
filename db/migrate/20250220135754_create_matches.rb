@@ -1,6 +1,6 @@
 class CreateMatches < ActiveRecord::Migration[8.0]
   def change
-    create_table :matches do |t|
+    create_table :matches_days_teams do |t|
       t.integer :score_home
       t.integer :score_away
       t.text :description
