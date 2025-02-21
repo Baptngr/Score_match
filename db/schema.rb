@@ -10,30 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_20_135754) do
+
+ActiveRecord::Schema[8.0].define(version: 2025_02_20_144703) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
-
+ 
+ 
   create_table "days", force: :cascade do |t|
     t.string "name"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "matches", force: :cascade do |t|
+ 
+ 
+  create_table "games", force: :cascade do |t|
     t.integer "score_home"
     t.integer "score_away"
     t.text "description"
     t.date "date"
+    t.bigint "team_home_id", null: false
+    t.bigint "team_away_id", null: false
+    t.bigint "day_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["day_id"], name: "index_games_on_day_id"
+    t.index ["team_away_id"], name: "index_games_on_team_away_id"
+    t.index ["team_home_id"], name: "index_games_on_team_home_id"
   end
-
+ 
+ 
   create_table "teams", force: :cascade do |t|
     t.string "logo"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-end
+ 
+ 
+  add_foreign_key "games", "days"
+  add_foreign_key "games", "teams", column: "team_away_id"
+  add_foreign_key "games", "teams", column: "team_home_id"
+ end
+ 
